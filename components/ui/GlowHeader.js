@@ -1,5 +1,5 @@
 import { Text, StyleSheet } from "react-native";
-import colors from "../../constants/colors";
+import { Colors } from "../../constants/styles";
 
 const GlowHeader = ({text, size}) => {
   return (
@@ -9,8 +9,8 @@ const GlowHeader = ({text, size}) => {
 
 const styles = StyleSheet.create({
     heading: {
-        color: colors.white,
-        textShadowColor: colors.white,
+        color: Colors.white,
+        textShadowColor: Colors.white,
         textShadowRadius: 5
     }
 })

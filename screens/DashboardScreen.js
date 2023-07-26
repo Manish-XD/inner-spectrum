@@ -6,4 +6,4 @@ const DashboardScreen = () => {
   )
 }
 
-export default DashboardScreen
+export default DashboardScreen;
