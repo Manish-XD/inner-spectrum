@@ -13,5 +13,6 @@ export const Colors = {
     violetBg: '#433E76',
     grad1: '#6659AA',
     grad2: '#F4C3A5',
-    black: '#000000'
+    black: '#000000',
+    whiteBg: '#FBFBF9'
   }
