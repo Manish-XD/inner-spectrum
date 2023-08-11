@@ -73,7 +73,7 @@ const QuesOneScreen = () => {
     const currentQuestionData = questions[currentQuestion];
     return (
       <LinearGradient style={styles.container} colors={[`#443E75`, `#33334F`]}>
-        <Progress />
+        {/* <Progress /> */}
         <Quiz
           question={currentQuestionData.question}
           options={currentQuestionData.options}

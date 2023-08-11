@@ -12,6 +12,7 @@ import IconButton from './components/ui/IconButton';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import QuizContextProvider, {QuizContext} from './store/quiz-context';
 import ActivityContextProvider, {ActivityContext} from './store/activity-context';
+import CompleteContextProvider, {CompleteContext} from './store/complete-context';
 import DashboardScreen from './screens/DashboardScreen';
 import MeetScreen from './screens/MeetScreen';
 import JobScreen from './screens/JobScreen';
@@ -32,7 +33,7 @@ function AuthStack() {
 function AuthenticatedStack() {
     const authCtx = useContext(AuthContext);
     return (
-        <Stack.Navigator screenOptions={{headerShown: false, headerRight: ({ tintColor }) => (
+        <Stack.Navigator screenOptions={{ headerShown: false, headerRight: ({ tintColor }) => (
             <IconButton
               icon={"exit"}
               color={tintColor}
@@ -100,8 +101,10 @@ export default function App() {
         <AuthContextProvider>
             <QuizContextProvider>
                 <ActivityContextProvider>
-                <StatusBar style="light" />
-                    <StackHandler />
+                    <CompleteContextProvider>
+                        <StatusBar style="light" />
+                        <StackHandler />
+                    </CompleteContextProvider>
                 </ActivityContextProvider>
             </QuizContextProvider>
         </AuthContextProvider>

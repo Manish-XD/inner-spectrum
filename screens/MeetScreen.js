@@ -5,9 +5,12 @@ import meetActivity from '../assets/logo/meetActivity.jpeg';
 import { useRoute } from "@react-navigation/native";
 import { useNavigation } from "@react-navigation/native";
 import { Ionicons } from '@expo/vector-icons';
+import { useContext } from "react";
+import { CompleteContext } from "../store/complete-context";
 
 const MeetScreen = () => {
     const route = useRoute();
+    const completeCtx = useContext(CompleteContext);
     const navigation = useNavigation();
     return (
         <View style={styles.container}>
@@ -23,7 +26,7 @@ const MeetScreen = () => {
                 <Text style={styles.subhead}>Accept Challenge</Text>
                 <Text style={styles.head}>{route.params.title}</Text>
                 <Text style={styles.desc}>{route.params.desc}</Text>
-                <Pressable style={({ pressed }) => [styles.button, pressed && styles.pressed]}>
+                <Pressable style={({ pressed }) => [styles.button, pressed && styles.pressed]} onPress={()=>{completeCtx.addComplete(1, 'Meet with People')}}>
                     <View style={styles.btnContainer}>
                         <Text style={styles.buttonTxt}>Mark as done</Text>
                         <Ionicons name="checkmark-done-outline" size={24} color="black" />
